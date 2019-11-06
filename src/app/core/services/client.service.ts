@@ -13,4 +13,8 @@ export class ClientService {
     return this._http.get(this._apiUrl);
   }
 
+  createClient(client) {
+    return this._http.post(this._apiUrl, client);
+  }
+
 }

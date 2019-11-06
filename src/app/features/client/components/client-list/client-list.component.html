@@ -1,4 +1,4 @@
-<button mat-icon-button color="primary">
+<button mat-icon-button color="primary" routerLink="form">
   <mat-icon>add_box</mat-icon>
 </button>
 
@@ -28,11 +28,11 @@
     <th mat-header-cell *matHeaderCellDef> Actions </th>
     <td mat-cell *matCellDef="let element">
 
-      <button mat-icon-button color="primary">
+      <button mat-icon-button color="primary" [routerLink]="['form', element.id]">
         <mat-icon>edit</mat-icon>
       </button>
 
-      <button mat-icon-button color="primary">
+      <button mat-icon-button color="primary" [routerLink]="['visit', element.id]">
         <mat-icon>note_add</mat-icon>
       </button>
     </td>

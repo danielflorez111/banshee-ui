@@ -16,6 +16,10 @@
       <span>Banshee</span>
     </mat-toolbar>
 
+    <div class="progress-bar">
+      <app-progress-bar [hidden]="!loading"></app-progress-bar>
+    </div>
+
     <div class="main-container">
       <router-outlet></router-outlet>
     </div>

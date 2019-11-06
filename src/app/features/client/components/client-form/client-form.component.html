@@ -1,0 +1,130 @@
+<form [formGroup]="clientForm" novalidate (ngSubmit)="onSubmit()">
+
+  <mat-card class="shipping-card">
+
+    <mat-card-header>
+      <mat-card-title>New Client</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nit" formControlName="nit">
+            <mat-error *ngIf="clientForm.controls['nit'].hasError('required')">
+              Nit is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Fullname" formControlName="fullname">
+            <mat-error *ngIf="clientForm.controls['fullname'].hasError('required')">
+              Fullname is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Address" formControlName="address">
+            <mat-error *ngIf="clientForm.controls['address'].hasError('required')">
+              Address is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Phone" formControlName="phone">
+            <mat-error *ngIf="clientForm.controls['phone'].hasError('required')">
+              Phone is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Country" formControlName="country">
+              <mat-option *ngFor="let country of countries" [value]="country.id">
+                {{ country.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="clientForm.controls['country'].hasError('required')">
+              Country is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="State" formControlName="state">
+              <mat-option *ngFor="let state of states" [value]="state.id">
+                {{ state.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="clientForm.controls['state'].hasError('required')">
+              State is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="City" formControlName="city">
+              <mat-option *ngFor="let city of cities" [value]="city.id">
+                {{ city.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="clientForm.controls['city'].hasError('required')">
+              City is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="number" placeholder="Credit Limit" formControlName="creditLimit">
+            <mat-error *ngIf="clientForm.controls['creditLimit'].hasError('required')">
+              Credit Limit is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="number" placeholder="Available Credit" formControlName="availableCredit">
+            <mat-error *ngIf="clientForm.controls['availableCredit'].hasError('required')">
+              AvailableCredit is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput type="number" placeholder="Visits Percentage" formControlName="visitsPercentage">
+            <mat-error *ngIf="clientForm.controls['visitsPercentage'].hasError('required')">
+              Visits Percentage is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </mat-card-content>
+
+    <!-- [disabled]="!clientForm.valid"  -->
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
